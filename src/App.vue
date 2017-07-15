@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <h1 v-for="(item, index) in repeat" v-bind:key="item" v-bind:data-index="index">{{ msg }}</h1>
-    <span class="wtf"><a href="https://www.reiner.io">wtf?</a></span>
+    <a href="https://www.reiner.io" class="wtf"><span>wtf?</span></a>
   </div>
 </template>
 
@@ -27,16 +27,17 @@
 @import "~minireset.css/minireset.sass"
 
 // Style a bitch
+$pablo: #f78c58
 
 html
-  background-color: #f78c58
-  font-family: 'Avenir', Helvetica, Arial, sans-serif
+  background-color: $pablo
+  font-family: Helvetica, Arial, sans-serif
   -webkit-font-smoothing: antialiased
   -moz-osx-font-smoothing: grayscale
   color: #1a1a1a
 
 $big: 64px
-$smol: 24px
+$smol: 32px
 
 .app
   margin: $big
@@ -47,11 +48,12 @@ $smol: 24px
 
 .wtf
   position: fixed
+  display: block
   right: 0
   top: 0
-  margin: $big
+  padding: $big
 
-  a
+  span
     font-size: responsive 48px 72px
     font-weight: bold
     display: block
@@ -67,17 +69,13 @@ $smol: 24px
     animation-iteration-count: infinite
     animation-timing-function: linear
 
-
-
 h1
   transition: font-size .2s ease-out, line-height .2s ease-out
-
   font-size: responsive $smol $big
-  line-height: responsive ($smol * .88) ($big * .88)
-
+  line-height: responsive ($smol * .96) ($big * .96)
   text-transform: uppercase
-  font-weight: bold
-  letter-spacing: responsive ($smol / 4) ($big / 4)
+  font-weight: 900
+  letter-spacing: responsive ($smol / 8) ($big / 8)
   white-space: nowrap
 
 </style>
