@@ -72,10 +72,9 @@ $smol: 32px
 h1
   transition: font-size .2s ease-out, line-height .2s ease-out
   font-size: responsive $smol $big
-  line-height: responsive ($smol * .96) ($big * .96)
+  line-height: responsive $smol $big
   text-transform: uppercase
   font-weight: 900
   letter-spacing: responsive ($smol / 8) ($big / 8)
-  white-space: nowrap
 
 </style>
